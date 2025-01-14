@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net8.0-ios</TargetFrameworks>
+        <RuntimeIdentifiers>ios-arm64</RuntimeIdentifiers>
+        <OutputType>Library</OutputType>
+		<ApplicationId>com.mauiappintune.share</ApplicationId>
+		<Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
+        <MtouchNoSymbolStrip Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">True</MtouchNoSymbolStrip>
+    </PropertyGroup>
+
+	<PropertyGroup>
+		<IsAppExtension>true</IsAppExtension>
+		<IsWatchApp>false</IsWatchApp>
+	</PropertyGroup>
+
+    <PropertyGroup>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+  
+    <PropertyGroup>
+        <CreatePackage>false</CreatePackage>
+        <MtouchInterpreter>all</MtouchInterpreter>
+	</PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <CodesignProvision>Maui Share App Intune - Development</CodesignProvision>
+      <CodesignKey>iPhone Developer</CodesignKey>
+      <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <CodesignProvision>Maui Share App Intune - AdHoc</CodesignProvision>
+      <CodesignKey>iPhone Distribution</CodesignKey>
+      <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.66.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Resources\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Resources\" />
+    </ItemGroup>
+</Project>

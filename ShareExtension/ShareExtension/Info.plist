@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>ShareExtension</string>
+	<key>CFBundleExecutable</key>
+	<string>ShareExtension</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mauiappintune.share</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>com.mauiappintune.share</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>msauth.com.microsoft.intunemam</string>
+				<string>msauth.com.microsoft.intunemam-intunemam</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>IntuneMAMSettings</key>
+	<dict>
+		<key>AppGroupIdentifiers</key>
+		<array>
+			<string>group.com.mauiappintune</string>
+		</array>
+	</dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>NSExtensionActivationRule</key>
+			<string>(SUBQUERY (extensionItems, $extensionItem, SUBQUERY ($extensionItem.attachments, $attachment,(( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.file-url") || ( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.microsoft.intune.mam.public.file-url"))).@count &gt; 25).@count == 0) &amp;&amp; (SUBQUERY (extensionItems, $extensionItem, SUBQUERY ($extensionItem.attachments, $attachment,(( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.image") || ( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.microsoft.intune.mam.public.image"))).@count &gt; 25).@count == 0) &amp;&amp; (SUBQUERY (extensionItems, $extensionItem, SUBQUERY ($extensionItem.attachments, $attachment,(( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.movie") || ( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.microsoft.intune.mam.public.movie"))).@count &gt; 25).@count == 0) &amp;&amp; ( (SUBQUERY (extensionItems, $extensionItem, SUBQUERY ($extensionItem.attachments, $attachment,(( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.file-url") || ( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.microsoft.intune.mam.public.file-url"))).@count &gt; 0).@count &gt; 0) || (SUBQUERY (extensionItems, $extensionItem, SUBQUERY ($extensionItem.attachments, $attachment,(( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.image") || ( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.microsoft.intune.mam.public.image"))).@count &gt; 0).@count &gt; 0) || (SUBQUERY (extensionItems, $extensionItem, SUBQUERY ($extensionItem.attachments, $attachment,(( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.movie") || ( ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.microsoft.intune.mam.public.movie"))).@count &gt; 0).@count &gt; 0) )</string>
+		</dict>
+		<key>NSExtensionMainStoryboard</key>
+		<string>MainInterface</string>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.share-services</string>
+	</dict>
+</dict>
+</plist>
